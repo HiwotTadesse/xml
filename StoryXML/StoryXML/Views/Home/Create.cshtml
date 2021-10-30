@@ -1,0 +1,47 @@
+﻿@model StoryXML.Models.StoryModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="text-center marginprop" style="margin-top:100px;">
+
+            <div class="card story-card">
+                <div class="card-header bg-primary header-text">
+                    <h4 style="color:white;">Add Story</h4>
+                </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group" style="width:100%">
+                    <br />
+                    <div class="m-auto" style="max-width:550px" >
+                        @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+                        
+                    </div>
+                </div>
+
+
+                <div class="form-group text-center ml-auto">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br />
+        <div style="font-size:x-large" class="text-center">
+            @Html.ActionLink("Back to List", "AllStory")
+        </div>
+    </div>
+    
+}
+
+

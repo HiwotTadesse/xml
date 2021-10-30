@@ -1,0 +1,13 @@
+
+.marginprop {
+   
+    max-width:600px;
+    margin:auto;
+}
+input.story {
+    width:100%;
+}
+
+.container.story-container{
+    margin-top:100px;
+}
